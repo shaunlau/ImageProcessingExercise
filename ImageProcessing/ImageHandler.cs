@@ -55,7 +55,7 @@ namespace ImageProcessing
 
         public static void DoProcess(ref byte[,] rArray, ref byte[,] gArray, ref byte[,] bArray)
         {
-            //YOUR CODE HERE
+            //YOUR CODE HERE 
 
         }
     }

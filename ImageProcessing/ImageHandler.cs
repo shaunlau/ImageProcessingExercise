@@ -56,7 +56,17 @@ namespace ImageProcessing
         public static void DoProcess(ref byte[,] rArray, ref byte[,] gArray, ref byte[,] bArray)
         {
             //YOUR CODE HERE 
-
+            int height = rArray.GetLength(0);
+            int width = rArray.GetLength(1);
+            double average;
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    average = (rArray[i, j] + gArray[i, j] + bArray[i, j])/ 3;
+                    rArray[i, j] = gArray[i, j] = bArray[i, j] = (byte)average;
+                }
+            }
         }
     }
 }

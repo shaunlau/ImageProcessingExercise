@@ -56,6 +56,8 @@ namespace ImageProcessing
         public static void DoProcess(ref byte[,] rArray, ref byte[,] gArray, ref byte[,] bArray)
         {
             //YOUR CODE HERE 
+            //EXTRA PROGRAMMING CASE 1.1
+            /*
             int height = rArray.GetLength(0);
             int width = rArray.GetLength(1);
             double average;
@@ -65,6 +67,21 @@ namespace ImageProcessing
                 {
                     average = (rArray[i, j] + gArray[i, j] + bArray[i, j])/ 3;
                     rArray[i, j] = gArray[i, j] = bArray[i, j] = (byte)average;
+                }
+            }
+             * */
+
+            //EXTRA PROGRAMMING CASE 1.2 
+            int height = rArray.GetLength(0);
+            int width = rArray.GetLength(1);
+            double average;
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    rArray[i, j] = FilterBrannan.R[rArray[i, j]];
+                    gArray[i, j] = FilterBrannan.G[gArray[i, j]];
+                    bArray[i, j] = FilterBrannan.B[bArray[i, j]];
                 }
             }
         }
